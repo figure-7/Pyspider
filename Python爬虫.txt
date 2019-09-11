@@ -1,0 +1,52 @@
+视频详见：B站：2018年最新Python3.6网络爬虫实战
+
+Pyspider网址：http://docs.pyspider.org/en/latest/
+
+commond line:
+global config：启动Pyspider时产生的一些数据
+config:可以在启动Pyspider时对应端口号网址查看时加入密码，比较保险
+all:运行所有组件
+one：运行编译情况
+webui：可以启动认证服务
+
+salf.crawl:
+age:过期后重新启动，可以配置刷新检测时间间隔
+priority:优先级爬取设置，优先级高的先爬取等等
+exetime:控制多长时间后再爬取
+retires:爬取失败多少次后结束
+itag：检测页面是否变化，是否需要重新爬取
+param：传参，集合类型，分别赋值给网址中的？
+allow_redirects：与网站302是否跳转
+proxy：设置代理
+js_script：执行javascript语句
+taskid:通过判断去除重复请求
+config:配置请求
+Handler.crawl_config = {}：将配置加入其中实现全局生效
+
+Response：
+Response.url：请求网址url
+Response.text：请求网址源代码
+Response.content：二进制
+Response.doc：网页解析
+Response.json：网页如果时json格式就进行转换
+Response.orig_url：请求网址原始url
+Response.save：在不同函数间传参
+Response.js_script_result：得到js结果
+Response.raise_for_status()：请求不是200报错
+
+@every：
+@every(minutes=0, seconds=0)：定时重新执行
+
+Frequently Asked Questions：
+里面是常见问题解答：
+删除项目：先把status设置为stop，再把group设成delete，等待删除即可
+重新运行项目最好是再新建一个
+progress里显示规定时间内队列状态，绿色成功
+
+ctrl+Alt+空格可以直接import
+scrapy使用：
+.css{.text}取的是对应源代码
+.css{.text::text}取的是对应标签下文本内容，带[]列表形式的
+.css{.text::text}.extract()取的是对应标签下文本内容，不带[]
+.css{.text::text}.extract()_first取的是对应标签下文本内容列表中的第一项
+
